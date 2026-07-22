@@ -246,8 +246,19 @@ export const projects = [
 ];
 
 export const certifications = [
+  {
+    name: "Databricks Certified Generative AI Engineer Associate",
+    issuer: "Databricks",
+    icon: "Bot",
+    credentialUrl: "https://credentials.databricks.com/634dc6b6-bfcf-4d8d-b288-b895a5f5d09d#acc.YU1a4NPg",
+  },
   { name: "OCI 2024 Generative AI Certified Professional", issuer: "Oracle", icon: "Cpu" },
-  { name: "DP-700: Fabric Data Engineer Associate", issuer: "Microsoft", icon: "Database" },
+  {
+    name: "Microsoft Certified: Fabric Data Engineer Associate (DP-700)",
+    issuer: "Microsoft",
+    icon: "Database",
+    credentialUrl: "https://learn.microsoft.com/en-us/users/mohanamithinti-1198/credentials/9a50fa5f0274d58e",
+  },
   { name: "AZ-104: Azure Administrator", issuer: "Microsoft", icon: "Cloud" },
   { name: "CBAP — Certified Business Analyst", issuer: "IIBA", icon: "BriefcaseBusiness" },
   { name: "Automation Anywhere Certified", issuer: "Automation Anywhere", icon: "Bot" },

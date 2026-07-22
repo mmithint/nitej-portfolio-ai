@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cpu, Database, Cloud, BriefcaseBusiness, Bot, Code2, Star } from "lucide-react";
+import { Cpu, Database, Cloud, BriefcaseBusiness, Bot, Code2, ExternalLink, Star } from "lucide-react";
 import { certifications } from "./data";
 import { AnimatedSection } from "./AnimatedSection";
 
@@ -30,14 +30,14 @@ export function Certifications() {
           {certifications.map((cert, i) => {
             const Icon = iconMap[cert.icon] || Star;
             return (
-              <motion.div
+              <motion.article
                 key={i}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ y: -3 }}
-                className="flex flex-col gap-3 p-5 rounded-2xl border border-border bg-card hover:border-white/15 transition-all duration-300 cursor-default"
+                className="flex flex-col gap-3 p-5 rounded-2xl border border-border bg-card hover:border-white/15 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
                   <Icon className="w-5 h-5 text-primary" />
@@ -45,8 +45,20 @@ export function Certifications() {
                 <div>
                   <p className="text-sm font-medium text-foreground leading-snug">{cert.name}</p>
                   <p className="text-xs text-muted-foreground mt-1">{cert.issuer}</p>
+                  {cert.credentialUrl && (
+                    <a
+                      href={cert.credentialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Verify ${cert.name} credential`}
+                      className="inline-flex items-center gap-1.5 mt-3 text-xs font-medium text-primary hover:text-blue-300 transition-colors"
+                    >
+                      Verify credential
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
                 </div>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>
