@@ -160,6 +160,23 @@ export const projects = [
     dotClass: "bg-blue-500",
   },
   {
+    title: "QHSE Document Consolidation Platform",
+    domain: "HSE / Controlled Documentation",
+    description:
+      "Production-track platform that transforms a large safety-document corpus into grounded, source-cited QHSE templates with collaborative governance and multilingual export.",
+    highlights: [
+      "Custom RAG pipeline: Azure AI Search filters → Cohere rerank → best 6 sources with per-sentence citations",
+      "Geometry-aware PDF/DOCX ingestion across ~1,040 documents and a governed 94-concept taxonomy",
+      "Entra ID + RBAC, section locks, threaded review, approvals, history, and reliable outbox notifications",
+      "Verified multilingual Word/PDF export including Arabic RTL, with token budgets and LLM spend circuit breakers",
+    ],
+    tech: ["React", "FastAPI", "Azure OpenAI", "Azure AI Search", "Cosmos DB", "Cohere Rerank", "Entra ID", "Docker"],
+    impact: "~1,040 documents · stateless cold start · governed multilingual output",
+    colorClass: "from-teal-500/10 to-cyan-600/5 border-teal-500/20 hover:border-teal-400/40",
+    badgeClass: "bg-teal-500/10 text-teal-300 border-teal-500/20",
+    dotClass: "bg-teal-400",
+  },
+  {
     title: "CITGO Split Billing Compliance",
     domain: "Energy / Financial Compliance",
     description:
